@@ -13,6 +13,23 @@ const Index = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Функция для плавной прокрутки к элементу
+  const scrollToSection = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      // Закрываем мобильное меню если оно открыто
+      if (isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+      
+      // Плавная прокрутка к элементу
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start' 
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 py-4 shadow-sm">
@@ -21,14 +38,37 @@ const Index = () => {
             <div className="font-bold text-xl text-fitness">FitnessPro</div>
             
             <nav className="hidden md:flex items-center space-x-6">
-              <a href="#program" className="text-gray-700 hover:text-fitness transition-colors">Программа</a>
-              <a href="#benefits" className="text-gray-700 hover:text-fitness transition-colors">Преимущества</a>
-              <a href="#pricing" className="text-gray-700 hover:text-fitness transition-colors">Цены</a>
-              <a href="#contact" className="text-gray-700 hover:text-fitness transition-colors">Контакты</a>
+              <button 
+                onClick={() => scrollToSection('program')} 
+                className="text-gray-700 hover:text-fitness transition-colors"
+              >
+                Программа
+              </button>
+              <button 
+                onClick={() => scrollToSection('benefits')} 
+                className="text-gray-700 hover:text-fitness transition-colors"
+              >
+                Преимущества
+              </button>
+              <button 
+                onClick={() => scrollToSection('pricing')} 
+                className="text-gray-700 hover:text-fitness transition-colors"
+              >
+                Цены
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')} 
+                className="text-gray-700 hover:text-fitness transition-colors"
+              >
+                Контакты
+              </button>
             </nav>
             
             <div className="flex items-center gap-4">
-              <Button className="bg-fitness hover:bg-fitness-dark text-white hidden md:flex">
+              <Button 
+                className="bg-fitness hover:bg-fitness-dark text-white hidden md:flex"
+                onClick={() => scrollToSection('pricing')}
+              >
                 Начать сейчас
               </Button>
               
@@ -49,35 +89,34 @@ const Index = () => {
           <div className="md:hidden bg-white border-t border-gray-100 py-4 animate-fade-in">
             <div className="container px-4">
               <nav className="flex flex-col space-y-4">
-                <a 
-                  href="#program" 
-                  className="text-gray-700 hover:text-fitness transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                <button 
+                  onClick={() => scrollToSection('program')} 
+                  className="text-gray-700 hover:text-fitness transition-colors py-2 text-left"
                 >
                   Программа
-                </a>
-                <a 
-                  href="#benefits" 
-                  className="text-gray-700 hover:text-fitness transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                </button>
+                <button 
+                  onClick={() => scrollToSection('benefits')} 
+                  className="text-gray-700 hover:text-fitness transition-colors py-2 text-left"
                 >
                   Преимущества
-                </a>
-                <a 
-                  href="#pricing" 
-                  className="text-gray-700 hover:text-fitness transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                </button>
+                <button 
+                  onClick={() => scrollToSection('pricing')} 
+                  className="text-gray-700 hover:text-fitness transition-colors py-2 text-left"
                 >
                   Цены
-                </a>
-                <a 
-                  href="#contact" 
-                  className="text-gray-700 hover:text-fitness transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                </button>
+                <button 
+                  onClick={() => scrollToSection('contact')} 
+                  className="text-gray-700 hover:text-fitness transition-colors py-2 text-left"
                 >
                   Контакты
-                </a>
-                <Button className="bg-fitness hover:bg-fitness-dark text-white w-full">
+                </button>
+                <Button 
+                  className="bg-fitness hover:bg-fitness-dark text-white w-full"
+                  onClick={() => scrollToSection('pricing')}
+                >
                   Начать сейчас
                 </Button>
               </nav>
@@ -104,10 +143,10 @@ const Index = () => {
             </div>
             <div className="flex flex-col md:items-end">
               <div className="flex space-x-4 mb-4">
-                <a href="#" className="text-gray-600 hover:text-fitness">Instagram</a>
-                <a href="#" className="text-gray-600 hover:text-fitness">Telegram</a>
-                <a href="#" className="text-gray-600 hover:text-fitness">VK</a>
-                <a href="#" className="text-gray-600 hover:text-fitness">YouTube</a>
+                <button className="text-gray-600 hover:text-fitness">Instagram</button>
+                <button className="text-gray-600 hover:text-fitness">Telegram</button>
+                <button className="text-gray-600 hover:text-fitness">VK</button>
+                <button className="text-gray-600 hover:text-fitness">YouTube</button>
               </div>
               <p className="text-gray-500 text-sm">
                 Политика конфиденциальности | Условия использования

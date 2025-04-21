@@ -40,6 +40,16 @@ const CallToAction = () => {
     }
   ];
 
+  const scrollToContact = () => {
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start' 
+      });
+    }
+  };
+
   return (
     <section id="pricing" className="py-16 bg-gradient-to-b from-white to-fitness-light/20">
       <div className="container px-4 md:px-6">
@@ -94,6 +104,7 @@ const CallToAction = () => {
                   ? 'bg-white text-fitness hover:bg-gray-100' 
                   : 'bg-fitness text-white hover:bg-fitness-dark'}`}
                 size="lg"
+                onClick={scrollToContact}
               >
                 {plan.buttonText}
               </Button>

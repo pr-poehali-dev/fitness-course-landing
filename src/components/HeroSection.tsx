@@ -3,6 +3,17 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
+  // Функция плавной прокрутки к нужному элементу
+  const scrollToSection = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start' 
+      });
+    }
+  };
+
   return (
     <section className="relative pt-28 pb-20 overflow-hidden bg-gradient-to-b from-fitness-light/30 to-white">
       <div className="container px-4 md:px-6">
@@ -18,6 +29,7 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 className="bg-fitness hover:bg-fitness-dark text-white"
+                onClick={() => scrollToSection('pricing')}
               >
                 Начать трансформацию
               </Button>
@@ -25,6 +37,7 @@ const HeroSection = () => {
                 variant="outline" 
                 size="lg"
                 className="border-fitness text-fitness hover:bg-fitness-light/50"
+                onClick={() => scrollToSection('program')}
               >
                 Узнать больше
               </Button>
