@@ -35,7 +35,7 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 py-4 shadow-sm">
         <div className="container px-4 md:px-6">
           <div className="flex justify-between items-center">
-            <div className="font-bold text-xl text-fitness">FitnessPro</div>
+            <div className="font-bold text-xl text-fitness">FitClub</div>
             
             <nav className="hidden md:flex items-center space-x-6">
               <button 
@@ -135,9 +135,9 @@ const Index = () => {
         <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <div className="font-bold text-xl text-fitness mb-2">FitnessPro</div>
+              <div className="font-bold text-xl text-fitness mb-2">FitClub</div>
               <p className="text-gray-600 text-sm">
-                © 2023 FitnessPro. Все права защищены.<br />
+                © 2023 FitClub. Все права защищены.<br />
                 Авторский курс тренера по фитнесу.
               </p>
             </div>

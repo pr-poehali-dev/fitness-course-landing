@@ -20,7 +20,7 @@ const HeroSection = () => {
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
           <div className="space-y-4 animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter font-heading text-gray-900">
-              Трансформируй своё тело с <span className="text-fitness">FitnessPro</span>
+              Трансформируй своё тело с <span className="text-fitness">FitClub</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-[600px]">
               Персональная программа тренировок и питания, разработанная профессиональным тренером для достижения ваших фитнес-целей.
